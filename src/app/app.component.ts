@@ -9,6 +9,15 @@ import { AngularEpubViewerComponent } from './ePubViewer/angularEpubViewer.compo
 })
 export class AppComponent implements OnInit {
   title = 'angular-epub-reader';
+
+  
+  // @ViewChild('epubViewer')
+  // epubViewer: AngularEpubViewerComponent;
+  // @ViewChild('picker', {read: ElementRef})
+  // picker: ElementRef;
+  // @ViewChild('metadata', {read: ElementRef})
+  // metadata: ElementRef;
+
   @ViewChild('epubViewer', {static: false}) epubViewer: AngularEpubViewerComponent;
   @ViewChild('picker', {static: false}) picker: ElementRef;
   @ViewChild('metadata', {static: false}) metadata: ElementRef;
