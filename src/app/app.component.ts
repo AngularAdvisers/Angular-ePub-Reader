@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { EpubChapter, EpubError, EpubLocation, EpubMetadata, EpubPage, EpubSearchResult } from './ePubViewer/angularEpubViewer.models';
 import { AngularEpubViewerComponent } from './ePubViewer/angularEpubViewer.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -19,8 +20,8 @@ export class AppComponent implements OnInit {
   // metadata: ElementRef;
 
   @ViewChild('epubViewer', {static: false}) epubViewer: AngularEpubViewerComponent;
-  @ViewChild('picker', {static: false}) picker: ElementRef;
-  @ViewChild('metadata', {static: false}) metadata: ElementRef;
+  @ViewChild('picker', {static: false, read: ElementRef} ) picker: ElementRef;
+  @ViewChild('metadata', {static: false, read: ElementRef} ) metadata: ElementRef;
 
   unzippedBooks: Book[] = [].concat(UNZIPPED_BOOKS);
   zippedBooks: Book[] = [].concat(ZIPPED_BOOKS);
